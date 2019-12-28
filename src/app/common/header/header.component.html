@@ -16,19 +16,44 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#" routerLink="recipe">Recipes <span class="sr-only">(current)</span></a></li>
-        <li><a href="#" routerLink="shoppinglist">Shopping List</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Assignments <span class="caret"></span></a>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="recipe">Recipes <span
+          class="sr-only">(current)</span></a></li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a routerLink="shoppinglist">Shopping
+          List</a></li>
+        <li class="dropdown" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Assignments <span
+            class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#" routerLink="/assignment/five">five</a></li>
             <li><a href="#">Fetch Data</a></li>
           </ul>
         </li>
+        <li class="dropdown" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Examples <span
+            class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#" routerLink="/example/routing/15">Path Params</a></li>
+            <li><a href="#" routerLink="/example/routing/15"
+                   [queryParams]="{'username':'kalaiselvan'}"
+                   fragment="loading"
+                   >Query Params</a></li>
+            <!-- for dynamic routes param value pass through the query params-->
+            <li><a href="#" routerLink="/example/routing/15"
+                   [queryParams]="{'username':'1'}"
+                   fragment="loading"
+                   [queryParamsHandling]="'preserve'">Query Params handling</a></li>
+            <li><a href="#" routerLink="/example/isauth"
+                   >Route Guard</a></li>
+            <li><a routerLink="/example/auth/login">Login</a></li>
+            <li><a routerLink="/example/auth/logout">Logout</a></li>
+          </ul>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Manage <span class="caret"></span></a>
+
+        <li class="dropdown" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" routerLinkActive="active">Manage
+            <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Save Data</a></li>
             <li><a href="#">Fetch Data</a></li>

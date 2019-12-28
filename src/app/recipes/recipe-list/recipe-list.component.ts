@@ -19,7 +19,7 @@ export class RecipeListComponent implements OnInit {
   }
 
   addRecipe() {
-    const recipe = new Recipe('', '', '');
+    const recipe = new Recipe('', '', '',[]);
     this.recipeservice.addRecipe(recipe);
     this.recipeWasSelected.emit(recipe);
   }

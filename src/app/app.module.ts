@@ -20,6 +20,7 @@ import {LoggingService} from './logging.service';
 import {UserserComponent} from './userser/userser.component';
 import {RecipesService} from './services/recipes.service';
 import {ShoppinglistserviceService} from './services/shoppinglistservice.service';
+import {PagenotfoundComponent} from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {ShoppinglistserviceService} from './services/shoppinglistservice.service
     ServertableComponent,
     HighlightsDirective,
     DropdownDirective,
-    UserserComponent
+    UserserComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
