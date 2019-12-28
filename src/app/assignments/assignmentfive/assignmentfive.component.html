@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div *ngIf="activeUsers.length!=0">
+      <h3> Active Users</h3>
+      <ul class="list-group">
+        <app-activeuser *ngFor="let activeuser of activeUsers; let i=index" [activeuser]="activeuser" [index]="i"
+        ></app-activeuser>
+      </ul>
+    </div>
+
+    <div *ngIf="inactiveUsers.length!=0">
+      <h3> In - Active Users</h3>
+      <ul class="list-group">
+        <app-inactiveuser *ngFor="let inactiveuser of inactiveUsers; let i=index"
+                          [inactiveUser]="inactiveuser" [index]="i"></app-inactiveuser>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="col-md-12">
+
+  <!-- TWO WAY DATA BINDING AND STRING INTERPOLATION-->
+  <div class="col-md-4">
+    <label for="serverName" class="control-label col-md-3">Name</label>
+    <input type="text" class="form-control input-sm" name="serverName" id="serverName"
+           [(ngModel)]="serverName.name">
+  </div>
+  <div class="col-md-3">
+    <label for="type" class="control-label col-md-3">Type</label>
+    <input type="text" class="form-control input-sm" name="type" id="type"
+           [(ngModel)]="serverName.type">
+  </div>
+  <div class="col-md-4">
+    <label for="Content" class="control-label col-md-3">Content</label>
+    <textarea type="text" class="form-control input-sm" name="content" id="content"
+              [(ngModel)]="serverName.content"></textarea>
+  </div>
+  <!-- TWO WAY DATA BINDING AND STRING INTERPOLATION-->
+
+  <!--LOCAL TEMPLATE REF-->
+  <div class="col-md-4">
+    <label for="localtemp" class="control-label col-md-3">Local
+      Temp</label>
+    <textarea type="text" class="form-control input-sm" name="content" id="localtemp"
+              #localtemp>{{serverName.localtemp}}</textarea>
+  </div>
+
+  <!--LOCAL TEMPLATE REF-->
+  <div class="col-md-1">
+
+    <button *ngIf="isadd" (click)="addServer(localtemp)" class="btn btn-sm btn-primary">Add</button>
+    <button *ngIf="isupdate" (click)="updateServer(localtemp)" class="btn btn-sm btn-primary">Update</button>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form>
+      <div class="row">
+        <div class="col-xs-5 form-group">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" class="form-control input-sm" #nameInput/>
+        </div>
+        <div class="col-xs-5 form-group">
+          <label for="amount">Amout</label>
+          <input type="number" name="amount" id="amount" class="form-control input-sm" #amoutInput>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 form-group">
+          <button class="btn btn-success btn-sm" type="submit" (click)="addItem()"> Add</button>
+
+          <button class="btn btn-danger btn-sm" type="button" (click)="updateItem()">Update</button>
+
+          <button class="btn btn-warning btn-sm" type="reset" >Clear</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

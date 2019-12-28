@@ -1,0 +1,37 @@
+<div class="container">
+
+  <form action="" class="form-group form-inline">
+    <div class="row">
+
+      <app-server (addServerevent)="addServer($event)" (updateServerevent)="updateServer($event)" [isadd]="isadd"
+                  [editindex]="editindex" [isupdate]="isupdate"
+                  [serverName]="serverName"></app-server>
+
+    </div>
+  </form>
+
+
+  <br/>
+  <div class="table-responsive">
+    <table class="table table-condensed table-striped table-bordered" border="1" *ngIf="servers.length!=0">
+      <thead>
+      <tr>
+        <th>SLNo</th>
+        <th>Server Name</th>
+        <th>Type</th>
+        <th>Content</th>
+        <th>Local Temp</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr app-servertable *ngFor="let server of servers; let i=index" [src]="server" [index]="i" (editserver)="edit(i)"
+          (deleteserver)="delete(i)">
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+</div>
