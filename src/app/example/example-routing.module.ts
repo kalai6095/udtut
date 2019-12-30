@@ -14,7 +14,7 @@ const routes: Routes = [
     canActivate: [AuthGuardService],
     canDeactivate: [CanDeactivateGuard],
     component: CanactivatedComponent,
-    resolve: {server: ServerResolver}
+   /* resolve: {server: ServerResolver}*/
   },
   {path: 'auth/:type', component: AuthenticationsComponent}
 ];
