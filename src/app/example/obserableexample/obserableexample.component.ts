@@ -1,5 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, observable, Subscription } from 'rxjs';
+import {map,filter} from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-obserableexample',
@@ -27,7 +29,30 @@ export class ObserableexampleComponent implements OnInit,OnDestroy {
         count++;
       },1000)
     })
-  this.customInt=  customIntervalObservable.subscribe(data=>{
+
+    customIntervalObservable.pipe(map((data:number)=>{
+        return 'Round :'+ (data+1);
+      })
+    )
+
+  /*this.customInt=  customIntervalObservable.subscribe(data=>{
+    this.count=data;
+    },error=>{
+      this.errorMsg=error
+    },()=>{
+      this.errorMsg="Completed!....";
+    })*/
+
+
+
+    this.customInt =  customIntervalObservable.pipe(
+      map((data:number)=>{
+        return 'Round :'+ (data+1);
+      }),
+      filter((data:number)=>{
+        return data>0;
+      })
+    ).subscribe(data=>{
     this.count=data;
     },error=>{
       this.errorMsg=error
