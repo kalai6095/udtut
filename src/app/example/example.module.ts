@@ -8,10 +8,11 @@ import {AuthGuardService} from './auth-guard.service';
 import {CanactivatedComponent} from './canactivated/canactivated.component';
 import {AuthenticationsComponent} from './authentications/authentications.component';
 import {CanDeactivateGuard} from './can-deactivate-guard.service';
+import { ObserableexampleComponent } from './obserableexample/obserableexample.component';
 
 
 @NgModule({
-  declarations: [PathparamsComponent, CanactivatedComponent, AuthenticationsComponent],
+  declarations: [PathparamsComponent, CanactivatedComponent, AuthenticationsComponent, ObserableexampleComponent],
   imports: [
     CommonModule,
     ExampleRoutingModule
