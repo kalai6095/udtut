@@ -6,6 +6,7 @@ import {CanactivatedComponent} from './canactivated/canactivated.component';
 import {CanDeactivateGuard} from './can-deactivate-guard.service';
 import {AuthenticationsComponent} from './authentications/authentications.component';
 import {ServerResolver} from './server-resolver.service';
+import { ObserableexampleComponent } from './obserableexample/obserableexample.component';
 
 const routes: Routes = [
   {path: 'routing/:id', component: PathparamsComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
     component: CanactivatedComponent,
    /* resolve: {server: ServerResolver}*/
   },
-  {path: 'auth/:type', component: AuthenticationsComponent}
+  {path: 'auth/:type', component: AuthenticationsComponent},
+  {path:'observable',component:ObserableexampleComponent}
 ];
 
 @NgModule({
