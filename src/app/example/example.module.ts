@@ -9,10 +9,12 @@ import {CanactivatedComponent} from './canactivated/canactivated.component';
 import {AuthenticationsComponent} from './authentications/authentications.component';
 import {CanDeactivateGuard} from './can-deactivate-guard.service';
 import { ObserableexampleComponent } from './obserableexample/obserableexample.component';
+import { SubjectsComponent } from './subjects/subjects.component';
+import { FormexamplesComponent } from './formexamples/formexamples.component';
 
 
 @NgModule({
-  declarations: [PathparamsComponent, CanactivatedComponent, AuthenticationsComponent, ObserableexampleComponent],
+  declarations: [PathparamsComponent, CanactivatedComponent, AuthenticationsComponent, ObserableexampleComponent, SubjectsComponent, FormexamplesComponent],
   imports: [
     CommonModule,
     ExampleRoutingModule

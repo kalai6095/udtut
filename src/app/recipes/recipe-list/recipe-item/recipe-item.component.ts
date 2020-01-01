@@ -22,7 +22,7 @@ export class RecipeItemComponent implements OnInit {
 
   onSelected(recipe: Recipe) {
     //this.recipeSelected.emit(i);
-    this.recipesService.recipeSelected.emit(recipe);
+    this.recipesService.recipeSelected.next(recipe);
   }
 
 }

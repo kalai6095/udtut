@@ -3,6 +3,7 @@ import {Recipe} from '../common/recipe.model';
 import {LoggingService} from '../logging.service';
 import {Ingredient} from '../common/ingredient.model';
 import {ShoppinglistserviceService} from './shoppinglistservice.service';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +32,8 @@ export class RecipesService {
         new Ingredient('Meet', 5), new Ingredient('Frensh Fries', 20)
       ])
   ];
-  recipeSelected = new EventEmitter<Recipe>();
+  /*recipeSelected = new EventEmitter<Recipe>();*/
+  recipeSelected = new Subject<Recipe>();
 
   getRecipe() {
     return this.recipes.slice();
