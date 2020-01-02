@@ -11,14 +11,16 @@ import {CanDeactivateGuard} from './can-deactivate-guard.service';
 import { ObserableexampleComponent } from './obserableexample/obserableexample.component';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { FormexamplesComponent } from './formexamples/formexamples.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
   declarations: [PathparamsComponent, CanactivatedComponent, AuthenticationsComponent, ObserableexampleComponent, SubjectsComponent, FormexamplesComponent],
-  imports: [
-    CommonModule,
-    ExampleRoutingModule
-  ],
+    imports: [
+        CommonModule,
+        ExampleRoutingModule,
+        FormsModule
+    ],
   providers: [AuthService, AuthGuardService, CanDeactivateGuard]
 })
 export class ExampleModule {

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-formexamples',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormexamplesComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
+
+  @ViewChild('formElement', {static: false}) formElement: NgForm;
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    if (this.formElement.valid) {
+      console.log(this.formElement);
+    }
+
   }
 
 }
