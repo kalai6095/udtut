@@ -16,11 +16,11 @@
         <tr *ngFor="let ingredient of ingredients; let i =index">
           <td class="col-xs-1">{{i + 1}}</td>
           <td>{{ingredient.name}}</td>
-          <td>{{ingredient.amout}}</td>
+          <td>{{ingredient.amount}}</td>
           <td class="col-xs-2">
             <div class="btn-group">
-              <span class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i></span>
-              <span class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></span>
+              <span class="btn btn-primary btn-sm" (click)="onEdit(i)"><i class="glyphicon glyphicon-edit"></i></span>
+              <span class="btn btn-danger btn-sm" (click)="onDelete(i)"><i class="glyphicon glyphicon-trash"></i></span>
             </div>
           </td>
         </tr>

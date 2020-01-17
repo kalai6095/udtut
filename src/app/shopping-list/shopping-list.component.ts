@@ -43,4 +43,16 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     this.paramsSubscription.unsubscribe();
   }
 
+  onEdit(i) {
+    this.shoppinglistserviceService.startedEdditing.next(i);
+  }
+
+  onDelete(i) {
+    const alertStatus = confirm('Are you sure want to delete');
+    if (alertStatus) {
+      this.shoppinglistserviceService.ondeleteIngredients(i);
+    }
+
+  }
+
 }

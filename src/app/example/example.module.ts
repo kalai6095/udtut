@@ -8,19 +8,22 @@ import {AuthGuardService} from './auth-guard.service';
 import {CanactivatedComponent} from './canactivated/canactivated.component';
 import {AuthenticationsComponent} from './authentications/authentications.component';
 import {CanDeactivateGuard} from './can-deactivate-guard.service';
-import { ObserableexampleComponent } from './obserableexample/obserableexample.component';
-import { SubjectsComponent } from './subjects/subjects.component';
-import { FormexamplesComponent } from './formexamples/formexamples.component';
-import {FormsModule} from '@angular/forms';
+import {ObserableexampleComponent} from './obserableexample/obserableexample.component';
+import {SubjectsComponent} from './subjects/subjects.component';
+import {FormexamplesComponent} from './formexamples/formexamples.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ReactiveformComponent} from './reactiveform/reactiveform.component';
 
 
 @NgModule({
-  declarations: [PathparamsComponent, CanactivatedComponent, AuthenticationsComponent, ObserableexampleComponent, SubjectsComponent, FormexamplesComponent],
-    imports: [
-        CommonModule,
-        ExampleRoutingModule,
-        FormsModule
-    ],
+  declarations: [PathparamsComponent, CanactivatedComponent, AuthenticationsComponent,
+    ObserableexampleComponent, SubjectsComponent, FormexamplesComponent, ReactiveformComponent],
+  imports: [
+    CommonModule,
+    ExampleRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   providers: [AuthService, AuthGuardService, CanDeactivateGuard]
 })
 export class ExampleModule {

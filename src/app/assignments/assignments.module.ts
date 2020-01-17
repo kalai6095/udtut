@@ -6,13 +6,16 @@ import {RouterModule} from '@angular/router';
 import {AssignmentfiveService} from './services/assignmentfive.service';
 import { ActiveuserComponent } from './assignmentfive/activeuser/activeuser.component';
 import { InactiveuserComponent } from './assignmentfive/inactiveuser/inactiveuser.component';
+import { ReactiveformassignmentsComponent } from './reactiveformassignments/reactiveformassignments.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
-  declarations: [AssignmentfiveComponent, ActiveuserComponent, InactiveuserComponent],
+  declarations: [AssignmentfiveComponent, ActiveuserComponent, InactiveuserComponent, ReactiveformassignmentsComponent],
   imports: [
     RouterModule.forChild(routes),
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: [AssignmentfiveService]
 })

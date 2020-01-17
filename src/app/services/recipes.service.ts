@@ -3,13 +3,13 @@ import {Recipe} from '../common/recipe.model';
 import {LoggingService} from '../logging.service';
 import {Ingredient} from '../common/ingredient.model';
 import {ShoppinglistserviceService} from './shoppinglistservice.service';
-import { Subject } from 'rxjs';
+import {Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipesService {
-
+  recipeChanged = new Subject<Recipe[]>();
 
   constructor(private logging: LoggingService,
               private slService: ShoppinglistserviceService) {
@@ -42,6 +42,7 @@ export class RecipesService {
   addRecipe(recipe: Recipe) {
     this.logging.logStatusChange('new logging added');
     this.recipes.push(recipe);
+    this.recipeChanged.next(this.recipes);
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
@@ -50,5 +51,11 @@ export class RecipesService {
 
   getRecipeById(index: number) {
     return this.recipes.slice()[index];
+  }
+
+
+  updateRecipe(index: number, newRecipe: Recipe) {
+    this.recipes[index] = newRecipe;
+    this.recipeChanged.next(this.recipes);
   }
 }

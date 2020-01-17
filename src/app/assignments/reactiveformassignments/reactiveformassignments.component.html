@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="reactiveAssignmentForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">project Name</label>
+          <input type="text" id="name" class="form-control"
+                 formControlName="name">
+          <div class="help-block"
+               *ngIf="!reactiveAssignmentForm.get('name').valid || !reactiveAssignmentForm.get('name').touched">
+            Invalid Project Name
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" id="email" class="form-control"
+                 formControlName="email">
+          <div class="help-block"
+               *ngIf="reactiveAssignmentForm.get('email').errors['invalidemail']">
+            Try Different email
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">Status</label>
+          <select id="status" class="form-control" formControlName="status">
+            <option *ngFor="let status of projectsStaus" value="{{status}}"> {{status}}</option>
+          </select>
+        </div>
+        <button class="btn btn-primary btn-sm">
+          Create Project
+        </button>
+
+      </form>
+    </div>
+  </div>
+</div>

@@ -25,41 +25,43 @@
             class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a routerLink="/assignment/five">five</a></li>
-            <li><a >Fetch Data</a></li>
+            <li><a>Fetch Data</a></li>
+            <li><a routerLink="/assignment/reactiveassignment">Reactive Forms Exp.</a></li>
           </ul>
         </li>
         <li class="dropdown" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-          <a  class="dropdown-toggle" data-toggle="dropdown" role="button">Examples <span
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button">Examples <span
             class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a routerLink="/example/routing/15">Path Params</a></li>
-            <li><a  routerLink="/example/routing/15"
+            <li><a routerLink="/example/routing/15"
                    [queryParams]="{'username':'kalaiselvan'}"
                    fragment="loading"
-                   >Query Params</a></li>
+            >Query Params</a></li>
             <!-- for dynamic routes param value pass through the query params-->
-            <li><a  routerLink="/example/routing/15"
+            <li><a routerLink="/example/routing/15"
                    [queryParams]="{'username':'1'}"
                    fragment="loading"
                    [queryParamsHandling]="'preserve'">Query Params handling</a></li>
-            <li><a  routerLink="/example/isauth"
-                   >Route Guard</a></li>
+            <li><a routerLink="/example/isauth"
+            >Route Guard</a></li>
+            <li><a routerLink="/example/observable"> Custom Observable</a></li>
+            <li><a routerLink="/example/subjects">Subjects</a></li>
+            <li><a routerLink="/example/formsexample">Forms</a></li>
+            <li><a routerLink="/example/reactiveexample"> Reactive Forms</a></li>
             <li><a routerLink="/example/auth/login">Login</a></li>
             <li><a routerLink="/example/auth/logout">Logout</a></li>
-            <li><a routerLink="/example/observable"> custom Observable</a></li>
-            <li><a  routerLink="/example/subjects">Subjects</a></li>
-            <li><a routerLink="/example/formsexample">Forms</a></li>
           </ul>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
 
         <li class="dropdown" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-          <a  class="dropdown-toggle" data-toggle="dropdown" role="button" routerLinkActive="active">Manage
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" routerLinkActive="active">Manage
             <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a >Save Data</a></li>
-            <li><a >Fetch Data</a></li>
+            <li><a>Save Data</a></li>
+            <li><a>Fetch Data</a></li>
           </ul>
         </li>
       </ul>

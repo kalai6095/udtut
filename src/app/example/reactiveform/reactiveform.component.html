@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <h3>Reactive Form Example</h3>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+        <div id="user-data">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" class="form-control" formControlName="username"
+                   required="required"/>
+            <span *ngIf="!reactiveForm.get('username').valid && reactiveForm.get('username').touched"
+                  class="help-block">Please enter a valid username</span>
+          </div>
+          <div class="form-group">
+            <label for="mail">Mail</label>
+            <input type="email" id="mail" name="mail" class="form-control" formControlName="email" required="required"
+                   email
+            />
+            <span *ngIf="!reactiveForm.get('email').valid && !reactiveForm.get('email').touched" class="help-block">
+            Please enter a Valid email.
+          </span>
+          </div>
+          <div class="radio" *ngFor="let gender of genders">
+            <label><input type="radio" name="gender"
+                          formControlName="gender" [value]="gender">{{gender}}</label>
+          </div>
+        </div>
+        <div>
+          <h4>Your Hobbies</h4>
+          <button class="btn btn-default" (click)="onAddHobby()">
+            Add Hobby
+          </button>
+        </div>
+        <div formArrayName="hobbies">
+          <div class="form-group" *ngFor="let hobbie of reactiveForm.get('hobbies').controls; let i=index">
+            <input type="text" class="form-control input-sm" [formControlName]="i">
+          </div>
+        </div>
+        <span> Please enter valid data!.</span>
+        <button
+          class="btn btn-primary btn-sm"
+          type="submit"
+        >Submit
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <!--<div class="col-xs-12">
+      <p>username: {{user.username}}</p>
+      <p>mail : {{user.mail}}</p>
+      <p>question : {{user.question}}</p>
+      <p>answer: {{user.answer}}</p>
+      <p> gender: {{user.gender}}</p>
+    </div>-->
+  </div>
+</div>

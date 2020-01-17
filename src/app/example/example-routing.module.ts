@@ -9,6 +9,7 @@ import {ServerResolver} from './server-resolver.service';
 import {ObserableexampleComponent} from './obserableexample/obserableexample.component';
 import {SubjectsComponent} from './subjects/subjects.component';
 import {FormexamplesComponent} from './formexamples/formexamples.component';
+import {ReactiveformComponent} from './reactiveform/reactiveform.component';
 
 const routes: Routes = [
   {path: 'routing/:id', component: PathparamsComponent},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: 'auth/:type', component: AuthenticationsComponent},
   {path: 'observable', component: ObserableexampleComponent},
   {path: 'subjects', component: SubjectsComponent},
-  {path: 'formsexample', component: FormexamplesComponent}
+  {path: 'formsexample', component: FormexamplesComponent},
+  {path: 'reactiveexample', component: ReactiveformComponent}
 ];
 
 @NgModule({
