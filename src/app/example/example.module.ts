@@ -13,16 +13,19 @@ import {SubjectsComponent} from './subjects/subjects.component';
 import {FormexamplesComponent} from './formexamples/formexamples.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ReactiveformComponent} from './reactiveform/reactiveform.component';
+import {HttpexampleComponent} from './httpexample/httpexample.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
   declarations: [PathparamsComponent, CanactivatedComponent, AuthenticationsComponent,
-    ObserableexampleComponent, SubjectsComponent, FormexamplesComponent, ReactiveformComponent],
+    ObserableexampleComponent, SubjectsComponent, FormexamplesComponent, ReactiveformComponent, HttpexampleComponent],
   imports: [
     CommonModule,
     ExampleRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [AuthService, AuthGuardService, CanDeactivateGuard]
 })

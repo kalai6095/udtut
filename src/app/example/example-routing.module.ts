@@ -10,6 +10,7 @@ import {ObserableexampleComponent} from './obserableexample/obserableexample.com
 import {SubjectsComponent} from './subjects/subjects.component';
 import {FormexamplesComponent} from './formexamples/formexamples.component';
 import {ReactiveformComponent} from './reactiveform/reactiveform.component';
+import {HttpexampleComponent} from './httpexample/httpexample.component';
 
 const routes: Routes = [
   {path: 'routing/:id', component: PathparamsComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path: 'observable', component: ObserableexampleComponent},
   {path: 'subjects', component: SubjectsComponent},
   {path: 'formsexample', component: FormexamplesComponent},
-  {path: 'reactiveexample', component: ReactiveformComponent}
+  {path: 'reactiveexample', component: ReactiveformComponent},
+  {path: 'httpexample', component: HttpexampleComponent}
 ];
 
 @NgModule({

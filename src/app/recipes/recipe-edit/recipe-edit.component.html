@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-xs-12">
           <button class="btn btn-sm btn-primary" *ngIf="!recipeForm.valid">Save</button>
-          <button class="btn btn-sm btn-warning">Clear</button>
+          <button class="btn btn-sm btn-warning" (click)="onCancel()">Clear</button>
         </div>
       </div>
       <div class="row">
@@ -24,14 +24,15 @@
             <label for="imagePath"> Image URL</label>
             <input type="text" id="imagePath"
                    class="form-control input-sm"
-                   formControlName="imagePath">
+                   formControlName="imagePath"
+            #imagePath>
           </div>
         </div>
       </div>
 
       <div class="row">
         <div class="col-xs-12">
-          <img src="{{recipeForm.get('imagePath').value}}" class="img-responsive" alt="">
+          <img [src]="imagePath.value" class="img-responsive" alt=""/>
         </div>
       </div>
 
@@ -49,7 +50,7 @@
       </div>
 
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12" formArrayName="ingredients">
           <div class="row" *ngFor="let ingredientCtrl of recipeForm.get('ingredients').controls; let i=index;"
                [formGroupName]="i"
                style="margin-top:10px;">
@@ -67,7 +68,7 @@
           <br/>
           <div class="row">
             <div class="col-xs-12">
-              <button class="btn btn-success btn-sm" (click)="onAddIngredient()"> Add Ingredients</button>
+              <button class="btn btn-success btn-sm" type="button" (click)="onAddIngredients()"> Add Ingredients</button>
             </div>
           </div>
         </div>

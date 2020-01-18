@@ -23,6 +23,7 @@ import {ShoppinglistserviceService} from './services/shoppinglistservice.service
 import {PagenotfoundComponent} from './pagenotfound/pagenotfound.component';
 import {RecipeStartComponent} from './recipes/recipe-start/recipe-start.component';
 import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
+import { ShortenpipePipe } from './shortenpipe.pipe';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
     UserserComponent,
     PagenotfoundComponent,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    ShortenpipePipe
   ],
   imports: [
     BrowserModule,
