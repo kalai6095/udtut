@@ -28,11 +28,25 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="form-group">
-        <button class="btn btn-sm btn-success">Fetch</button>
+        <button class="btn btn-sm btn-success" (click)="onfetchData()">Fetch</button>
         <button class="btn btn-sm btn-warning">Clear</button>
       </div>
       <div class="form-group">
-        No Post Available!...
+        <div class="table-responsive">
+          <table class="table table-bordered" border="1">
+
+            <tbody>
+            <tr *ngFor="let d of postData; let i =index;">
+              <td>{{i + 1}}</td>
+              <td>{{d.title}}</td>
+              <td>{{d.content}}</td>
+            </tr>
+            <tr *ngIf="postData===null">
+              <td>No Records found!...</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
