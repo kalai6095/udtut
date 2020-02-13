@@ -13,6 +13,7 @@ export class HttpexampleComponent implements OnInit {
 
   httpExampleForm: FormGroup;
   postData: Post[];
+  isfetching = false;
 
   constructor(private  http: HttpClient) {
   }
@@ -34,6 +35,7 @@ export class HttpexampleComponent implements OnInit {
   }
 
   onfetchData() {
+    this.isfetching = true;
     this.http.get<{ [key: string]: Post }>('https://ang-udtut-8.firebaseio.com/posts.json')
       .pipe(map((responseData: { [key: string]: Post }) => {
           const postArray: Post[] = [];
@@ -49,6 +51,7 @@ export class HttpexampleComponent implements OnInit {
       .subscribe((data) => {
         console.log(data);
         this.postData = data;
+        this.isfetching = false;
       });
   }
 

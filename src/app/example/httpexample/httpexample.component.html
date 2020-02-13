@@ -31,21 +31,20 @@
         <button class="btn btn-sm btn-success" (click)="onfetchData()">Fetch</button>
         <button class="btn btn-sm btn-warning">Clear</button>
       </div>
-      <div class="form-group">
-        <div class="table-responsive">
-          <table class="table table-bordered" border="1">
-
-            <tbody>
-            <tr *ngFor="let d of postData; let i =index;">
-              <td>{{i + 1}}</td>
-              <td>{{d.title}}</td>
-              <td>{{d.content}}</td>
-            </tr>
-            <tr *ngIf="postData===null">
-              <td>No Records found!...</td>
-            </tr>
-            </tbody>
-          </table>
+      <div class="row">
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+          <p *ngIf="postData.length<1 &&!isfetching">
+            No Records found!...
+          </p>
+          <ul class="list-group" *ngIf="postData.length>=1 &&!isfetching">
+            <li class="list-group-item" *ngFor="let d of postData; let i =index;">
+              <h3>{{d.title}}</h3>
+              <p>{{d.content}}</p>
+            </li>
+          </ul>
+          <p *ngIf="isfetching">
+            Loading!.....
+          </p>
         </div>
       </div>
     </div>
