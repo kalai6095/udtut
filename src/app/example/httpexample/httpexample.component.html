@@ -40,11 +40,19 @@
             <li class="list-group-item" *ngFor="let d of postData; let i =index;">
               <h3>{{d.title}}</h3>
               <p>{{d.content}}</p>
+              <button style="float: right;margin-top: -61px;" class="btn btn-sm btn-danger"
+                      (click)="clearPost(d.id)"><i class="glyphicon glyphicon-remove"></i></button>
             </li>
           </ul>
-          <p *ngIf="isfetching">
+          <p *ngIf="isfetching && !error">
             Loading!.....
           </p>
+          <div class="alert alert-danger" *ngIf="error">
+            <h1>
+              {{error.error.error}}
+            </h1>
+            {{error.message}}
+          </div>
         </div>
       </div>
     </div>

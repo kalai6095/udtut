@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './common/header/header.component';
@@ -23,7 +23,9 @@ import {ShoppinglistserviceService} from './services/shoppinglistservice.service
 import {PagenotfoundComponent} from './pagenotfound/pagenotfound.component';
 import {RecipeStartComponent} from './recipes/recipe-start/recipe-start.component';
 import {RecipeEditComponent} from './recipes/recipe-edit/recipe-edit.component';
-import { ShortenpipePipe } from './shortenpipe.pipe';
+import {ShortenpipePipe} from './shortenpipe.pipe';
+import {HttpServiceInterceptor} from './example/httpInterceptor';
+import {LoggingServiceInterceptor} from './example/logging-interceptor';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,20 @@ import { ShortenpipePipe } from './shortenpipe.pipe';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [LoggingService, RecipesService, ShoppinglistserviceService],
+  providers: [
+    LoggingService,
+    RecipesService,
+    ShoppinglistserviceService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpServiceInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoggingServiceInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
